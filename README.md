@@ -6,7 +6,7 @@ The data set is a hand-built sample of 26 well-known digital brands, stored in b
 
 The purpose of this software is to practice a complete data pipeline in Python: load a CSV with Pandas, normalize and validate it, compute the exact WCAG contrast ratio between each brand's primary and background colors, and chart the findings with Matplotlib, including which brands meet the 4.5:1 minimum.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://drive.google.com/file/d/1yrhxS9leAcaCa1kOrnPdtoqLWBCBuD-c/view?usp=sharing)
 
 # Data Analysis Results
 
