@@ -1,0 +1,27 @@
+BrandName,PrimaryHex,BackgroundHex,TypographyClass,DataQuality
+Spotify,#1DB954,#191414,Sans-Serif,Clean
+Netflix,#E50914,#000000,Sans-Serif,Clean
+Airbnb,FF5A5F,FFFFFF,Sans-Serif,Messy
+Stripe,#635BFF,#0A2540,Sans-Serif,Clean
+GitHub,#24292F,#FFFFFF,Sans-Serif,Clean
+Medium,#000,#FFF,Serif,Messy
+NYTimes,#121212,#FFFFFF,Serif,Clean
+Vercel,#FFFFFF,#000000,Sans-Serif,Clean
+Terminal Co,#00FF41,#0D0208,Monospace,Clean
+Notion,  #37352F ,#FFFFFF,Sans-Serif,Messy
+Slack,#4A154B,#FFFFFF,Sans-Serif,Clean
+Twitch,#9146FF,#0E0E10,Sans-Serif,Clean
+Mailchimp,#FFE01B,#241C15,Serif,Clean
+Dropbox,#0061FF,#F7F5F2,Sans-Serif,Clean
+Snapchat,#FFFC00,#FFFFFF,Sans-Serif,Clean
+Tumblr,#001935,#FFFFFF,Sans-Serif,Clean
+CodePen,#47CF73,#1E1F26,Monospace,Messy
+Guardian,#052962,#FFFFFF,Serif,Clean
+Pinterest,#E60023,#FFFFFF,Sans-Serif,Clean
+Bumble,#FFC629,#FFFFFF,Sans-Serif,Clean
+Lyft,#FF00BF,#FFFFFF,Sans-Serif,Clean
+Reddit,#FF4500,,Sans-Serif,Missing
+Figma,,#FFFFFF,Sans-Serif,Missing
+Unknown Brand,#ZZZ123,#FFFFFF,Serif,Messy
+Linear,#5E6AD2,#08090A,Sans-Serif,Clean
+Substack,#FF6719,#FFFFFF,Serif,Clean

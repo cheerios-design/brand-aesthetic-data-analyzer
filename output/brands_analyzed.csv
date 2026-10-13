@@ -1,0 +1,24 @@
+BrandName,PrimaryHex,BackgroundHex,TypographyClass,DataQuality,ContrastRatio,PassesAA
+Spotify,#1DB954,#191414,Sans-Serif,Clean,7.05,True
+Netflix,#E50914,#000000,Sans-Serif,Clean,4.38,False
+Airbnb,#FF5A5F,#FFFFFF,Sans-Serif,Messy,3.05,False
+Stripe,#635BFF,#0A2540,Sans-Serif,Clean,3.31,False
+GitHub,#24292F,#FFFFFF,Sans-Serif,Clean,14.65,True
+Medium,#000000,#FFFFFF,Serif,Messy,21.0,True
+NYTimes,#121212,#FFFFFF,Serif,Clean,18.73,True
+Vercel,#FFFFFF,#000000,Sans-Serif,Clean,21.0,True
+Terminal Co,#00FF41,#0D0208,Monospace,Clean,14.94,True
+Notion,#37352F,#FFFFFF,Sans-Serif,Messy,12.26,True
+Slack,#4A154B,#FFFFFF,Sans-Serif,Clean,14.0,True
+Twitch,#9146FF,#0E0E10,Sans-Serif,Clean,4.15,False
+Mailchimp,#FFE01B,#241C15,Serif,Clean,12.72,True
+Dropbox,#0061FF,#F7F5F2,Sans-Serif,Clean,4.65,True
+Snapchat,#FFFC00,#FFFFFF,Sans-Serif,Clean,1.1,False
+Tumblr,#001935,#FFFFFF,Sans-Serif,Clean,17.64,True
+CodePen,#47CF73,#1E1F26,Monospace,Messy,8.16,True
+Guardian,#052962,#FFFFFF,Serif,Clean,14.0,True
+Pinterest,#E60023,#FFFFFF,Sans-Serif,Clean,4.78,True
+Bumble,#FFC629,#FFFFFF,Sans-Serif,Clean,1.57,False
+Lyft,#FF00BF,#FFFFFF,Sans-Serif,Clean,3.5,False
+Linear,#5E6AD2,#08090A,Sans-Serif,Clean,4.24,False
+Substack,#FF6719,#FFFFFF,Serif,Clean,2.91,False
