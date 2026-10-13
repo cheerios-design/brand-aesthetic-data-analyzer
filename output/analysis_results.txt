@@ -1,0 +1,20 @@
+Q1. Which typography class is most common and how does contrast compare by class?
+A1. Sans-Serif is most common (16 of 23 brands). Average contrast by class:
+    Sans-Serif: 16 brands, avg 7.58:1
+    Serif: 5 brands, avg 13.87:1
+    Monospace: 2 brands, avg 11.55:1
+
+Q2. How many brands meet the 4.5:1 WCAG AA minimum, and which fail?
+A2. 14 of 23 pass; 9 fail (worst first):
+    Snapchat: 1.1:1
+    Bumble: 1.57:1
+    Substack: 2.91:1
+    Airbnb: 3.05:1
+    Stripe: 3.31:1
+    Lyft: 3.5:1
+    Twitch: 4.15:1
+    Linear: 4.24:1
+    Netflix: 4.38:1
+
+Q3. Which brands have the highest and lowest contrast?
+A3. Highest: Medium (21.0:1). Lowest: Snapchat (1.1:1).

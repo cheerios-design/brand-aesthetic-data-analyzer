@@ -220,6 +220,70 @@ def plot_contrast_scores(df: pd.DataFrame, out_path: Path) -> None:
     plt.close(fig)
 
 
+def answer_typography_question(df: pd.DataFrame) -> str:
+    """Answer: which typography class is most common, and how does each
+    class perform on contrast?
+
+    Uses aggregation (count and mean) grouped by typography class.
+
+    Args:
+        df: Analyzed DataFrame with TypographyClass and ContrastRatio.
+
+    Returns:
+        A text answer justified by the aggregated numbers.
+    """
+    summary = df.groupby("TypographyClass")["ContrastRatio"].agg(
+        Brands="count", AvgContrast="mean").sort_values("Brands", ascending=False)
+    top = summary.index[0]
+    lines = [f"Q1. Which typography class is most common and how does "
+             f"contrast compare by class?",
+             f"A1. {top} is most common ({int(summary.iloc[0]['Brands'])} of "
+             f"{len(df)} brands). Average contrast by class:"]
+    for name, row in summary.iterrows():
+        lines.append(f"    {name}: {int(row['Brands'])} brands, "
+                     f"avg {row['AvgContrast']:.2f}:1")
+    return "\n".join(lines)
+
+
+def answer_accessibility_question(df: pd.DataFrame) -> str:
+    """Answer: how many brands meet WCAG AA, and which ones fail?
+
+    Uses filtering on the pass flag and sorting by contrast ratio.
+
+    Args:
+        df: Analyzed DataFrame with ContrastRatio and PassesAA.
+
+    Returns:
+        A text answer listing the failing brands from worst to best.
+    """
+    failing = df[~df["PassesAA"]].sort_values("ContrastRatio")
+    lines = ["Q2. How many brands meet the 4.5:1 WCAG AA minimum, and which "
+             "fail?",
+             f"A2. {int(df['PassesAA'].sum())} of {len(df)} pass; "
+             f"{len(failing)} fail (worst first):"]
+    for _, row in failing.iterrows():
+        lines.append(f"    {row['BrandName']}: {row['ContrastRatio']}:1")
+    return "\n".join(lines)
+
+
+def answer_extreme_question(df: pd.DataFrame) -> str:
+    """Answer: which brands have the highest and lowest contrast?
+
+    Uses sorting to find the extremes of the contrast distribution.
+
+    Args:
+        df: Analyzed DataFrame with BrandName and ContrastRatio.
+
+    Returns:
+        A text answer naming the top and bottom brands.
+    """
+    ranked = df.sort_values("ContrastRatio", ascending=False)
+    best, worst = ranked.iloc[0], ranked.iloc[-1]
+    return ("Q3. Which brands have the highest and lowest contrast?\n"
+            f"A3. Highest: {best['BrandName']} ({best['ContrastRatio']}:1). "
+            f"Lowest: {worst['BrandName']} ({worst['ContrastRatio']}:1).")
+
+
 def main() -> None:
     """Run the full pipeline: load, clean, analyze, and visualize."""
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -227,6 +291,11 @@ def main() -> None:
     cleaned = clean_data(raw)
     analyzed = add_contrast_column(cleaned)
     analyzed.to_csv(OUTPUT_DIR / "brands_analyzed.csv", index=False)
+    answers = "\n\n".join([answer_typography_question(analyzed),
+                           answer_accessibility_question(analyzed),
+                           answer_extreme_question(analyzed)])
+    print(answers)
+    (OUTPUT_DIR / "analysis_results.txt").write_text(answers, encoding="utf-8")
     plot_typography_frequency(analyzed, OUTPUT_DIR / "typography_frequency.png")
     plot_contrast_scores(analyzed, OUTPUT_DIR / "contrast_scores.png")
     print(f"Loaded {len(raw)} rows; kept {len(analyzed)} after cleaning.")
